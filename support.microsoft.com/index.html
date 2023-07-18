@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Search</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+  
+  <style>
+  
+
+    .three {
+      color: #333;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 250px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      display: none; /* Initially hide the result container */
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    #result.show {
+      display: block; /* Show the result container */
+    }
+
+    #result h2 {
+      color: #333;
+    }
+
+    #result p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="three">Employee Search</h1>
+  <input type="text" id="searchInput" placeholder="Enter employee ID">
+  <button onclick="search()">Search</button>
+
+  <div id="result"></div>
+</body>
+</html>
