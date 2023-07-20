@@ -1,20 +1,92 @@
 [
-    {
-        "name": "John Doe",
-        "code": "1",
-        "department": "IT",
-        "photo": "https://cdn.hswstatic.com/gif/play/0b7f4e9b-f59c-4024-9f06-b3dc12850ab7-1920-1080.jpg"
-    },
-    {
-        "name": "Jane Smith",
-        "code": "EMP002",
-        "department": "HR",
-        "photo": "jane_smith.jpg"
-    },
-    {
-        "name": "Michael Johnson",
-        "code": "EMP003",
-        "department": "Finance",
-        "photo": "michael_johnson.jpg"
-    }
+  {
+    "code": "MST6842",
+    "name": "George Pease",
+    "photo": "https://cdn.hswstatic.com/gif/play/0b7f4e9b-f59c-4024-9f06-b3dc12850ab7-1920-1080.jpg",
+    "department": "Senior Technician"
+  },
+  {
+    "code": "MST91310",
+    "name": "Melvin Travis",
+    "photo": 28,
+    "department": "Technician"
+  },
+  {
+    "code": "MST4860",
+    "name": "Steve Johnson",
+    "photo": 26,
+    "department": "Technician"
+  },
+  {
+    "code": "MST2812",
+    "name": "Jessica Wills",
+    "photo": 24,
+    "department": "Technician"
+  },
+  {
+    "code": "MST334",
+    "name": "ELLIOT ALDERSON",
+    "photo": 44,
+    "department": "Technician"
+  },
+  {
+    "code": "MST1517",
+    "name": "Jordan McLean",
+    "photo": 38,
+    "department": "Technician"
+  },
+  {
+    "code": "MST4393",
+    "name": "Chris Morgan",
+    "photo": 41,
+    "department": "Technician"
+  },
+  {
+    "code": "MST619130",
+    "name": "Jack Walker",
+    "photo": 28,
+    "department": "Senior Manphotor Anti Hacking Division"
+  },
+  {
+    "code": "MS1211",
+    "name": "Jason Miller",
+    "photo": 31,
+    "department": "Technician"
+  },
+  {
+    "code": "MS1059",
+    "name": "Hayden Ward",
+    "photo": 47,
+    "department": "Senior Technician"
+  },
+  {
+    "code": "MS1549",
+    "name": "Steven Williams",
+    "photo": 25,
+    "department": "Senior Technician"
+  },
+  {
+    "code": "MS8743",
+    "name": "Jerry Baker",
+    "photo": 33,
+    "department": "Technician"
+  },
+  {
+    "code": "MS11765",
+    "name": "Davcode Freeman",
+    "photo": 44,
+    "department": "Senior Technician"
+  },
+  {
+    "code": "MS23546",
+    "name": "Jason Smith",
+    "photo": 45,
+    "department": "Senior Technician"
+  },
+  {
+    "code": "MS1709",
+    "name": "Charlie Heck",
+    "photo": 29,
+    "department": "Technician"
+  }
 ]
