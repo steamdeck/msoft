@@ -16,6 +16,7 @@ function search() {
         var resultDiv = document.getElementById("result");
         resultDiv.innerHTML = `
           <h2>Employee Details</h2>
+          <p><strong>Photo:</strong> ${employee.photo}</p>
           <p><strong>ID:</strong> ${employee.id}</p>
           <p><strong>Name:</strong> ${employee.name}</p>
           <p><strong>Age:</strong> ${employee.age}</p>

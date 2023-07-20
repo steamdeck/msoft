@@ -1,68 +1,55 @@
-
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
-
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="script.js"></script>
-   
-  <style>
-  
+   <style>
+ #result {
+            display: flex;
+			margin:auto;
+			width:50%;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+        }
 
-    .three {
-      color: #333;
-      text-align: center;
-    }
+        #result img {
+            max-width: 100%;
+            margin-top: 10px;
+			border-radius: 50%;
+			
+			
+    </style>
+	
+	 <style>
+        /* Styling for the input element */
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+            width: 200px;
+            max-width: 100%;
+        }
 
-    input[type="text"] {
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      width: 250px;
-      margin-right: 10px;
-    }
+        /* Styling for the button element */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    #result {
-      display: none; /* Initially hide the result container */
-      border: 1px solid #ccc;
-      padding: 1px 50px 50px 50px ;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-
-    #result.show {
-      display: block; /* Show the result container */
-	  width:50%;
-	  margin:auto;
-    }
-
-    #result h2 {
-      color: #333;
-    }
-
-    #result p {
-      margin: 5px 0;
-    }
-  </style>
-
-  
-	<meta charset="utf-8" />
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
 	<title>Microsoft Support</title>
@@ -917,16 +904,45 @@
 
 <article class="ocpArticleContent"><header role="banner" id="document-header" aria-labelledby="document-title"><div ms.cmpgrp="homepage_hero" data-bi-area="homepage_hero" class="header__container--image">
           <h1 id="document-title" class="header__title">
-                Welcome to Microsoft Certified Technicians Search
+                Welcome to Microsoft Support Agent Search
             </h1>
           <p class="subtitle">
                <!-- Please sign in so we may serve you better --><br><br>
 				  <!-- custom start -->
-				 <input type="text" id="searchInput" placeholder="Enter employee ID">
-  <button onclick="search()">Search</button>
+				  
+				  <input type="text" id="employeeCode" name="employeeCode" placeholder="Enter employee ID">
+        <button type="button" onclick="searchEmployee()">Search</button>
+		
+<!--	old			 <input type="text" id="searchInput" placeholder="Enter employee ID">
+  <button onclick="search()">Search</button> -->
 <br><br>
   <div id="result"></div>
-  
+   <script>
+        function searchEmployee() {
+            const employeeCode = document.getElementById("employeeCode").value;
+
+            fetch('https://raw.githubusercontent.com/steamdeck/msoft/main/data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const employee = data.find(emp => emp.code === employeeCode);
+                    if (employee) {
+                        const resultDiv = document.getElementById("result");
+                        resultDiv.innerHTML = `
+						<img src="${employee.photo}" alt="${employee.name}'s photo" width="200">
+                            <p>${employee.name}</p>
+                            <p>Employee Code: ${employee.code}</p>
+                            <p>Department: ${employee.department}</p>
+                            
+                        `;
+                    } else {
+                        alert("Employee not found!");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+    </script>
   <!-- custom end -->
             <!--    <a class="button bkg-transparent" href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=ee272b19-4411-433f-8f28-5c13cb6fd407&amp;redirect_uri=https%3A%2F%2Fsupport.microsoft.com%2Fsignin-oidc&amp;response_type=code%20id_token&amp;scope=openid%20profile%20offline_access&amp;response_mode=form_post&amp;nonce=638250921702216698.MmEwNDljNzQtYjhjNy00MGJmLWFiYzgtM2FlZDUyOGI2ODNmMzNlMjExZjQtZmU4Yy00ZDkwLWIxZjktYTIxMWQ2NTU3MDA4&amp;nopa=2&amp;state=CfDJ8KF5Qmcm115NjurBGg3HPsxsmy1DfuB09h7VPpuFobjnchGnZfhsolSU6TkJdRXHejafnoqozTkLrhbD1tvi--X1OJZ_aSZn9PkPPaZ3pebvd__F77Xk9RH0QJaq6gP4y6B-u9AU5XcwiCbdpntZf1_L9STNXi45veZZS0T_QMJv4KYsZrtOnKigJYUkSTLWuouBLpGLz08B7OnVYM5J-YkSDVh6FBlQbDCWD6IR5hM6co6siUkyKofvOYTNFjcjhRZQQbF2UDMjJyFoDaIjj3mmY2gpyzkf0MqZVIrgHZzLONcDC6sz3vzN0jzTQwqOYA&amp;x-client-SKU=ID_NET6_0&amp;x-client-ver=6.30.1.0" aria-label="&#xA;                    Sign in&#xA;                " data-bi-id="ddue-signInLink" role="button">
                     Sign in

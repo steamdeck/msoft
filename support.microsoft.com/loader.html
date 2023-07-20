@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Search</title>
+</head>
+<body>
+    <h1>Employee Search</h1>
+    <form>
+        <label for="employeeCode">Enter Employee Code:</label>
+        <input type="text" id="employeeCode" name="employeeCode">
+        <button type="button" onclick="searchEmployee()">Search</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function searchEmployee() {
+            const employeeCode = document.getElementById("employeeCode").value;
+
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const employee = data.find(emp => emp.code === employeeCode);
+                    if (employee) {
+                        const resultDiv = document.getElementById("result");
+                        resultDiv.innerHTML = `
+                            <p>${employee.name}</p>
+                            <p>Employee Code: ${employee.code}</p>
+                            <p>Department: ${employee.department}</p>
+                            <img src="${employee.photo}" alt="${employee.name}'s photo" width="200">
+                        `;
+                    } else {
+                        alert("Employee not found!");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+    </script>
+</body>
+</html>

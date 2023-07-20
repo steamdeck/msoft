@@ -1,92 +1,23 @@
-[
+	[
   {
-    "id": "MST6842",
-    "name": "George Pease",
-    "age": 38,
-    "department": "Senior Technician"
+    "id": "1",
+    "name": "John Doe",
+    "age": 30,
+    "department": "Sales",
+    "photo": "https://cdn.hswstatic.com/gif/play/0b7f4e9b-f59c-4024-9f06-b3dc12850ab7-1920-1080.jpg"
   },
   {
-    "id": "MST91310",
-    "name": "Melvin Travis",
+    "id": "2",
+    "name": "Jane Smith",
+    "age": 35,
+    "department": "Marketing",
+    "image_url": "https://example.com/jane_smith.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Mike Johnson",
     "age": 28,
-    "department": "Technician"
-  },
-  {
-    "id": "MST4860",
-    "name": "Steve Johnson",
-    "age": 26,
-    "department": "Technician"
-  },
-  {
-    "id": "MST2812",
-    "name": "Jessica Wills",
-    "age": 24,
-    "department": "Technician"
-  },
-  {
-    "id": "MST334",
-    "name": "ELLIOT ALDERSON",
-    "age": 44,
-    "department": "Technician"
-  },
-  {
-    "id": "MST1517",
-    "name": "Jordan McLean",
-    "age": 38,
-    "department": "Technician"
-  },
-  {
-    "id": "MST4393",
-    "name": "Chris Morgan",
-    "age": 41,
-    "department": "Technician"
-  },
-  {
-    "id": "MST619130",
-    "name": "Jack Walker",
-    "age": 28,
-    "department": "Senior Manager Anti Hacking Division"
-  },
-  {
-    "id": "MS1211",
-    "name": "Jason Miller",
-    "age": 31,
-    "department": "Technician"
-  },
-  {
-    "id": "MS1059",
-    "name": "Hayden Ward",
-    "age": 47,
-    "department": "Senior Technician"
-  },
-  {
-    "id": "MS1549",
-    "name": "Steven Williams",
-    "age": 25,
-    "department": "Senior Technician"
-  },
-  {
-    "id": "MS8743",
-    "name": "Jerry Baker",
-    "age": 33,
-    "department": "Technician"
-  },
-  {
-    "id": "MS11765",
-    "name": "David Freeman",
-    "age": 44,
-    "department": "Senior Technician"
-  },
-  {
-    "id": "MS23546",
-    "name": "Jason Smith",
-    "age": 45,
-    "department": "Senior Technician"
-  },
-  {
-    "id": "MS1709",
-    "name": "Charlie Heck",
-    "age": 29,
-    "department": "Technician"
+    "department": "IT",
+    "image_url": "https://example.com/mike_johnson.jpg"
   }
 ]
