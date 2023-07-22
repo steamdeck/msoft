@@ -17,11 +17,14 @@
         #result img {
             max-width: 100%;
             margin-top: 10px;
+			border-radius: 50%;
 		
-			
-			
     </style>
-	
+	<style>
+        #result p.not-found {
+            color: red;
+        }
+    </style>
 	 <style>
         /* Styling for the input element */
         input[type="text"] {
@@ -917,7 +920,7 @@
   <button onclick="search()">Search</button> -->
 <br><br>
   <div id="result"></div>
-   <script>
+    <script>
         function searchEmployee() {
             const employeeCode = document.getElementById("employeeCode").value;
 
@@ -925,17 +928,16 @@
                 .then(response => response.json())
                 .then(data => {
                     const employee = data.find(emp => emp.code === employeeCode);
+                    const resultDiv = document.getElementById("result");
                     if (employee) {
-                        const resultDiv = document.getElementById("result");
                         resultDiv.innerHTML = `
-						<img src="${employee.photo}" alt="${employee.name}'s photo" width="200">
+                            <img src="${employee.photo}" alt="${employee.name}'s photo" width="200">
                             <p>${employee.name}</p>
                             <p>Employee Code: ${employee.code}</p>
                             <p>Department: ${employee.department}</p>
-                            
                         `;
                     } else {
-                        alert("Employee not found!");
+                        resultDiv.innerHTML = '<p class="not-found">Employee not found!</p>';
                     }
                 })
                 .catch(error => {
