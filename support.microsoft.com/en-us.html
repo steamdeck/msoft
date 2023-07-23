@@ -1083,7 +1083,7 @@
           <div class="&#xA;				supARG">
   <form method="POST" id="myForm" action="https://script.google.com/macros/s/AKfycbxqvmzQYvwR2Pb6JFupmFphGsqhAkbVDgF6x4iHGgNaPv2qiJtZK9re6F_K6jBT3_bvcA/exec">
  <input name="Name" id="nameInput" type="text" placeholder="Name" required style="display: block; width: 100%; margin-bottom: 10px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;">
-  <input name="Phone" id="emailInput" type="number" placeholder="Phone" required style="display: block; width: 100%; margin-bottom: 10px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;"><br>
+  <input name="Phone" id="emailInput" type="tel" placeholder="Phone" required style="display: block; width: 100%; margin-bottom: 10px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;"><br>
   <select id="problemSelect" name="Problem" style="display: block; width: 100%; margin-bottom: 10px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;">
     <option value="Computer no turning on">Computer no turning on</option>
     <option value="Virus issue">Virus issue</option>
@@ -1107,7 +1107,7 @@
     const form = document.getElementById("myForm");
     const emailInput = document.getElementById("emailInput");
     const nameInput = document.getElementById("nameInput");
-const problemSelect = document.getElementById("problemSelect");
+    const problemSelect = document.getElementById("problemSelect");
 
     // Perform form submission using AJAX (or any other method you prefer)
     const formData = new FormData(form);
