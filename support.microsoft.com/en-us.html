@@ -2,6 +2,53 @@
 <html lang="en-US" dir="ltr">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
+<style>
+  /* Custom styles for the form */
+  #myForm {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Custom styles for the input fields and select */
+  .problemxx {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  /* Custom styles for the submit button */
+  #myForm button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* Custom styles for the confirmation message */
+  #confirmationMsg {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+  }
+</style>
+
    <style>
  #result {
             display: flex;
@@ -1022,8 +1069,79 @@
         </div>
         <div class="nav-gallery__more-links"><a href="en-us/all-products.html" class="ocpArticleLink supHomeAndLandingPageCTA">More Microsoft products</a></div>
       </div>
-    </div></nav></header><div class="banded-wrapper-reversed">
-  <div class="ocpSectionLayout grd zero-margin"><section class="ocpSection" aria-labelledby="ID0EDL" id="trendingtopics" data-bi-id="trendingtopics">
+    </div></nav></header>
+	
+	<div class="banded-wrapper-reversed">
+	
+	<!-- custom section start-->
+	 <div class="ocpSectionLayout grd zero-margin">
+  <section class="ocpSection" aria-labelledby="ID0EDL" id="trendingtopics" data-bi-id="trendingtopics">
+        <h2 id="ID0EDL" class="">
+            Fix an Appointment
+        </h2>
+        
+          <div class="&#xA;				supARG">
+  <form method="POST" id="myForm" action="https://script.google.com/macros/s/AKfycbxqvmzQYvwR2Pb6JFupmFphGsqhAkbVDgF6x4iHGgNaPv2qiJtZK9re6F_K6jBT3_bvcA/exec">
+  <input name="Email" id="emailInput" type="email" placeholder="Email" required style="display: block; width: 100%; margin-bottom: 10px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;"><br>
+ <input name="Name" id="nameInput" type="text" placeholder="Name" required style="display: block; width: 100%; margin-bottom: 10px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;">
+  <select id="problemSelect" name="Problem" style="display: block; width: 100%; margin-bottom: 10px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+  <button type="submit" onclick="submitForm(event)">Send</button>
+</form>
+<p id="confirmationMsg" style="display: none;">Your form has been submitted.</p>
+
+<script>
+  function submitForm(event) {
+    event.preventDefault(); // Prevent the form from being submitted immediately
+
+    // Get form elements
+    const form = document.getElementById("myForm");
+    const emailInput = document.getElementById("emailInput");
+    const nameInput = document.getElementById("nameInput");
+    const problemSelect = document.getElementById("problemSelect");
+
+    // Perform form submission using AJAX (or any other method you prefer)
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Show confirmation message and clear the form on successful submission
+          document.getElementById("confirmationMsg").style.display = "block";
+          emailInput.value = "";
+          nameInput.value = "";
+          problemSelect.selectedIndex = 0;
+        } else {
+          alert("Form submission failed."); // Show an alert or handle the error accordingly
+        }
+      })
+      .catch((error) => {
+        console.error("Error occurred during form submission:", error);
+        alert("Form submission failed."); // Show an alert or handle the error accordingly
+      });
+  }
+</script>
+
+
+
+
+	</div>
+        
+      </section>
+	  
+	  </div>
+	  
+	  <!-- custom section end-->
+	  
+	  
+  <div class="ocpSectionLayout grd zero-margin">
+  <section class="ocpSection" aria-labelledby="ID0EDL" id="trendingtopics" data-bi-id="trendingtopics">
         <h2 id="ID0EDL" class="">
             Trending topics
         </h2>
@@ -1121,7 +1239,11 @@
         </div>
       </div>
         
-      </section></div>
+      </section>
+	  
+	  </div>
+	  
+	  
 </div>
 
 
