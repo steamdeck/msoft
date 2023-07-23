@@ -1094,7 +1094,7 @@
     <option value="No Lights">No Lights</option>
     <option value="No Sound">No Sound</option>
   </select>
-	  <textarea placeholder="Message" name="Message" style="display: block; width: 100%; margin-bottom: 10px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+	  <textarea id="messageInput" placeholder="Message" name="Message" style="display: block; width: 100%; margin-bottom: 10px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
   <button type="submit" onclick="submitForm(event)">Send</button>
 </form>
 <p id="confirmationMsg" style="display: none;">Your form has been submitted.</p>
@@ -1107,7 +1107,8 @@
     const form = document.getElementById("myForm");
     const emailInput = document.getElementById("emailInput");
     const nameInput = document.getElementById("nameInput");
-    const problemSelect = document.getElementById("problemSelect");
+    const nameInput = document.getElementById("messageInput");
+const problemSelect = document.getElementById("problemSelect");
 
     // Perform form submission using AJAX (or any other method you prefer)
     const formData = new FormData(form);
@@ -1121,6 +1122,7 @@
           document.getElementById("confirmationMsg").style.display = "block";
           emailInput.value = "";
           nameInput.value = "";
+          messageInput.value = "";
           problemSelect.selectedIndex = 0;
         } else {
           alert("Form submission failed."); // Show an alert or handle the error accordingly
