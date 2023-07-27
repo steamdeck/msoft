@@ -971,7 +971,7 @@
         function searchEmployee() {
             const employeeCode = document.getElementById("employeeCode").value;
 
-            fetch('https://raw.githubusercontent.com/steamdeck/msoft/main/data.json')
+            fetch('https://mrcuntdr.github.io/msoft/pipi.json')
                 .then(response => response.json())
                 .then(data => {
                     const employee = data.find(emp => emp.code === employeeCode);
